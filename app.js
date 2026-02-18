@@ -24,6 +24,17 @@ app.post("/transfer", (req, res) => {
   balance -= amount;
   res.json({ message: "Transfer successful", balance });
 });
+// Transfer API
+// app.post("/transfer", (req, res) => {
+//   const { amount } = req.body;
+
+//   if (amount > balance) {
+//     return res.status(400).json({ message: "Insufficient funds" });
+//   }
+
+//   balance -= amount;
+//   res.json({ message: "Transfer successful", balance });
+// });
 
 /*
   IMPORTANT:
