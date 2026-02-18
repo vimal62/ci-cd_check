@@ -36,30 +36,7 @@ app.post("/transfer", (req, res) => {
 //   res.json({ message: "Transfer successful", balance });
 // });
 
-/*
-  IMPORTANT:
-  Export app for testing
-*/
 
-/*
-  IMPORTANT:
-  Export app for testing
-*/
-
-/*
-  IMPORTANT:
-  Export app for testing
-*/
-
-/*
-  IMPORTANT:
-  Export app for testing
-*/
-
-/*
-  IMPORTANT:
-  Export app for testing
-*/
 module.exports = app;
 
 /*
