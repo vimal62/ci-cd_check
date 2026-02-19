@@ -9,9 +9,7 @@ let balance = 1000;
 app.get("/", (req, res) => {
   res.json("api live");
 });
-// app.get("/balance", (req, res) => {
-//   res.json({ balance });
-// });
+
 
 // Transfer API
 app.post("/transfer", (req, res) => {
