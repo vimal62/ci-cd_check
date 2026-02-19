@@ -6,10 +6,10 @@ app.use(express.json());
 let balance = 1000;
 
 // Balance API
+// app.get("/", (req, res) => {
+//   res.json("api live");
+// });
 app.get("/", (req, res) => {
-  res.json("api live");
-});
-app.get("/balance", (req, res) => {
   res.json({ balance });
 });
 
