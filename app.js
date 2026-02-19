@@ -5,34 +5,37 @@ app.use(express.json());
 
 let balance = 1000;
 
-// Balance API
+// Root route
 app.get("/", (req, res) => {
   res.json("api live");
 });
 
+// Balance API
+app.get("/balance", (req, res) => {
+  res.json({ balance });
+});
 
 // Transfer API
 app.post("/transfer", (req, res) => {
   const { amount } = req.body;
 
-  if (amount > balance) {
-    return res.status(400).json({ message: "Insufficient funds" });
+  if (!amount || amount <= 0) {
+    return res.status(400).json({ message: "Invalid amount" });
   }
 
   balance -= amount;
+
   res.json({ message: "Transfer successful", balance });
 });
 
-
-
+// Export app for testing
 module.exports = app;
 
-/*
-  Start server ONLY if file run directly
-  (Not during Jest testing)
-*/
+// Start server only if run directly
+const PORT = process.env.PORT || 3000;
+
 if (require.main === module) {
-  app.listen(3000, () => {
-    console.log("Banking app running on port 3000");
+  app.listen(PORT, () => {
+    console.log(`Banking app running on port ${PORT}`);
   });
 }
