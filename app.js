@@ -7,7 +7,7 @@ let balance = 1000;
 
 // Root route
 app.get("/", (req, res) => {
-  res.json("api live");
+  res.json("api CHANGEEE");
 });
 
 // Balance API
